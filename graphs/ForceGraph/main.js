@@ -1,0 +1,3 @@
+window.onload = function() {
+  // do d3 stuff here...
+}

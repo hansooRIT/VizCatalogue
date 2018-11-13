@@ -1,0 +1,7 @@
+/* MAIN CSS FILE FOR PROJECT */
+
+.line {
+  fill: none;
+  stroke: red;
+  stroke-width: 2px;
+} 
