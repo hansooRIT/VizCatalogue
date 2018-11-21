@@ -59,9 +59,8 @@ let dataset = {
 
 function createPartition() {
     let root = d3.hierarchy(dataset).count();
-    console.log(root)
     
-    let w = 500, h = 500;
+    let w = 650, h = 650;
     
     let svg = d3.select("#partition")
         .attr('width', w)
@@ -73,7 +72,6 @@ function createPartition() {
         .round(true);
     
     partition(root);
-    console.log(root);
     
     svg.selectAll('rect')
         .data(root.descendants())

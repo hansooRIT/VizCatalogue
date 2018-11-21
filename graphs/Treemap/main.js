@@ -61,7 +61,7 @@ function createTreeMap() {
     let root = d3.hierarchy(dataset).count();
     console.log(root)
     
-    let w = 500, h = 500;
+    let w = 800, h = 500;
     
     let svg = d3.select("#treeMap")
         .attr('width', w)
@@ -76,6 +76,7 @@ function createTreeMap() {
         .tile(d3.treemapSliceDice);
     
     treelayout(root);
+    
     console.log(root);
     
     let color = d3.scaleOrdinal(d3.schemePastel2);
@@ -90,17 +91,6 @@ function createTreeMap() {
         .attr('y', d => d.y0 )
         .attr('width', d => (d.x1 - d.x0) )
         .attr('height', d => (d.y1 - d.y0));
-
-    // add text 
-    svg.selectAll('text')
-         .data(root.descendants())
-         .enter()
-         .append('text')
-         .classed('node-label', true)
-         .style('font-weight', d => d.children ? 'bold' : 'normal')
-         .attr('x', d => d.x0 + 10)
-         .attr('y', d => d.y0 + 30)
-         .text(d => d.data.name);
 }
 
 window.onload = function() {

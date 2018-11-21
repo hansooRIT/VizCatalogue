@@ -84,18 +84,6 @@ function createPack() {
         .attr('cx', d => d.x )
         .attr('cy', d => d.y )
         .attr('r', d => d.r );
-    
-    svg.selectAll('text')
-     .data(root.descendants())
-     .enter()
-     .append('text')
-     .classed('node-label', true)
-     .style('font-size', '8pt')
-     .style('text-anchor', 'middle')
-     .attr('x', d => d.x )
-     .attr('y', d => d.y + 4)
-     .text(d => d.data.name);
-
 }
 
 window.onload = function() {

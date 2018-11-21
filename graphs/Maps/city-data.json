@@ -1,0 +1,39 @@
+
+{ "cities": [
+  {
+    "name": "Palisades Park",
+    "lat": 40.848156,
+    "lon": -73.997643
+  },
+  {
+    "name": "Detroit",
+    "lat": 42.331429,
+    "lon": -83.045753
+  },
+  {
+    "name": "Boston",
+    "lat": 42.360081,
+    "lon": -71.058884
+  },
+  {
+    "name": "Montgomery",
+    "lat": 42.894127,
+    "lon": -74.409973
+  },
+  {
+    "name": "New York",
+    "lat": 40.6971494,
+    "lon": -74.2598661
+  },
+  {
+    "name": "Philidelphia",
+    "lat": 39.952583,
+    "lon": -75.165222
+  },
+  {
+    "name": "Buffalo",
+    "lat": 42.886448,
+    "lon": -78.878372
+  }
+]
+}
