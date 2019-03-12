@@ -1,10 +1,11 @@
 <!doctype html>
 <html lang='en'>
   <head>
-    <title>My Awesome Visualization</title>
+    <title>Area Chart</title>
     <meta charset="utf-8">
     <script src="https://d3js.org/d3.v5.min.js"></script>
     <link rel="stylesheet" href="../../vizcatalogue.css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat|Noto+Sans+TC" rel="stylesheet">
   </head>
 
   <body>
@@ -28,12 +29,20 @@
         <a href="../StackedBarChart/stackedBar.html">Stacked Bar</a>
         <a href="../Tree/tree.html">Tree</a>
         <a href="../Treemap/treemap.html">Treemap</a>
+        <a href="../../Pet Data Analysis/animalanalysis.html">A Practical Example</a>
     </div>
     <section class="chartContainer">
-        <h2>Area Chart</h2>
-        <p>This is an area chart</p>
+        <h1>Area Chart</h1>
+        <h2>Description</h2>
+        <h3>Usage Case</h3>
+        <p>Area charts tend to describe a time-series relationship. What this means is that it wants to show a change in some sort of observable data over a period of time using the area as a visual indicator. In this case, the area chart is used to show a change in calorie intake per day of the week for a person.</p>
+        <h3>Marks</h3>
+        <p>1 - Area</p>
+        <h3>Channels</h3>
+        <p>2 - Horizontal and vertical positions</p>
+        <p>Another potential channel could be color, but it is not in this case as the color is uniform.</p>
         <svg id='areaChart'></svg>
-        <br><hr>
+        <br>
     </section>
     <script src='./main.js'></script>
   </body>

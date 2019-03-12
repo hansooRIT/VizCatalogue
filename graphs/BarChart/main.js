@@ -12,8 +12,8 @@ function rowConverter(d) {
 }
 
 function createBarChart() {
-    let w = 600;
-    let h = 500;
+    let w = 615;
+    let h = 525;
     
     let svg = d3
         .select("#barChart")
@@ -47,6 +47,7 @@ function createBarChart() {
         .attr("height", d => h - 20 - yScale(d.calories))
         .attr("width", barlen)
         .attr("y", d => yScale(d.calories))
+        .attr("transform", `translate(10, -10)`)
         .style("fill", d => (d.calories < 2000) ? 'red' : 'orange');
     
     let xAxis = d3
@@ -56,16 +57,29 @@ function createBarChart() {
 
     let xAxisGroup = svg
         .append("g")
-        .attr("transform", `translate(0, ${h - 20})`)
+        .attr("transform", `translate(10, ${h - 30})`)
         .call(xAxis);
     
     let yAxis = d3.axisLeft(yScale);
 
     let yAxisGroup = svg
         .append("g")
-        .attr("transform", `translate(40, 0)`)
+        .attr("transform", `translate(50, -10)`)
         .call(yAxis);
-
+    
+    svg.append("text")             
+      .attr("transform",
+            "translate(310, 520)")
+      .style("text-anchor", "middle")
+      .text("Day");
+    
+    svg.append("text")
+      .attr("transform", "rotate(-90)")
+      .attr("y", -5)
+      .attr("x", -250)
+      .attr("dy", "1em")
+      .style("text-anchor", "middle")
+      .text("Calories");  
 }
 
 window.onload = function() {

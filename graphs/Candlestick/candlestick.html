@@ -1,10 +1,11 @@
 <!doctype html>
 <html lang='en'>
   <head>
-    <title>My Awesome Visualization</title>
+    <title>Candlestick</title>
     <meta charset="utf-8">
     <script src="https://d3js.org/d3.v5.min.js"></script>
     <link rel="stylesheet" href="../../vizcatalogue.css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat|Noto+Sans+TC" rel="stylesheet">
   </head>
 
   <body>
@@ -28,12 +29,19 @@
         <a href="../StackedBarChart/stackedBar.html">Stacked Bar</a>
         <a href="../Tree/tree.html">Tree</a>
         <a href="../Treemap/treemap.html">Treemap</a>
+        <a href="../../Pet Data Analysis/animalanalysis.html">A Practical Example</a>
     </div>
     <section class="chartContainer">
-        <h2>Candlestick Chart</h2>
-        <p>This is a candlestick chart</p>
+        <h1>Candlestick Chart</h1>
+        <h2>Description</h2>
+        <h3>Usage Case</h3>
+        <p>Candlestick charts are usually used in trading businesses in order to keep track of price movement. Each candlestick has 4 components, a high, low, open, and close. The high and low represent the highest and lowest possible price for the given item, while the open and close represent the price of the item at the start/end of the trading cycle for that day.</p>
+        <h3>Marks</h3>
+        <p>1 - Lines</p>
+        <h3>Channels</h3>
+        <p>3 - Horizontal position, vertical position, and color</p>
         <svg id='candlestick'></svg>
-        <br><hr>
+        <br>
     </section>
     <script src='./main.js'></script>
   </body>

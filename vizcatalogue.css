@@ -9,13 +9,14 @@
     background-color: #111; /* Black */
     overflow-x: hidden; /* Disable horizontal scroll */
     padding-top: 20px;
+    font-family: 'Noto Sans TC', sans-serif;
 }
 
 /* The navigation menu links */
 .sidenav a {
     padding: 6px 8px 6px 16px;
     text-decoration: none;
-    font-size: 25px;
+    font-size: 14px;
     color: #818181;
     display: block;
 }
@@ -26,14 +27,88 @@
 }
 
 /* Style page content */
+.mainTitle {
+    margin-left: 160px; /* Same as the width of the sidebar */
+    padding: 0px 10px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.mainTitle h3 {
+    margin-left: 0px;
+    padding: 0px 10px;
+    font-family: 'Montserrat', sans-serif;
+}
+.aboutSite {
+    margin-left: 160px; /* Same as the width of the sidebar */
+    padding: 0px 10px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.aboutSite p, li {
+    font-family: 'Noto Sans TC', sans-serif;
+}
 .main {
     margin-left: 160px; /* Same as the width of the sidebar */
     padding: 0px 10px;
 }
 
-.chartContainer {
-     margin-left: 160px; /* Same as the width of the sidebar */
+.mapTextContainer {
+    margin-left: 160px; /* Same as the width of the sidebar */
     padding: 0px 10px;
+}
+
+.mapTextContainer h1 {
+    font-family: 'Montserrat', sans-serif;
+}
+
+.mapTextContainer h2, h3 {
+    font-family: 'Montserrat', sans-serif;
+    margin-left: 850px;
+}
+
+#desc {
+    margin-left: 850px;
+}
+
+#desc2 {
+    margin-left: 850px;
+}
+
+#desc3 {
+    margin-left: 850px;
+}
+
+.mapTextContainer p {
+    font-family: 'Noto Sans TC', sans-serif;
+    margin-left: 850px;
+    position: static;
+    width: 350px;
+}
+
+.chartContainer {
+    margin-left: 160px; /* Same as the width of the sidebar */
+    padding: 0px 10px;
+}
+
+.chartContainer h1 {
+    font-family: 'Montserrat', sans-serif;
+}
+
+.chartContainer h2, h3 {
+    font-family: 'Montserrat', sans-serif;
+    margin-left: 625px;
+}
+
+.chartContainer p {
+    font-family: 'Noto Sans TC', sans-serif;
+    margin-left: 625px;
+    position: static;
+    width: 350px;
+}
+
+.chartContainer svg {
+    position: fixed;
+    top: 50px;
 }
 
 .link {
@@ -47,6 +122,12 @@
 
 .line {
   fill: none;
+  stroke: red;
+  stroke-width: 2px;
+} 
+
+.area {
+  fill: red;
   stroke: red;
   stroke-width: 2px;
 } 

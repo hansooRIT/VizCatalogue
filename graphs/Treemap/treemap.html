@@ -1,10 +1,11 @@
 <!doctype html>
 <html lang='en'>
   <head>
-    <title>My Awesome Visualization</title>
+    <title>Treemap</title>
     <meta charset="utf-8">
     <script src="https://d3js.org/d3.v5.min.js"></script>
     <link rel="stylesheet" href="../../vizcatalogue.css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat|Noto+Sans+TC" rel="stylesheet">
   </head>
 
   <body>
@@ -28,12 +29,20 @@
         <a href="../StackedBarChart/stackedBar.html">Stacked Bar</a>
         <a href="../Tree/tree.html">Tree</a>
         <a href="../Treemap/treemap.html">Treemap</a>
+        <a href="../../Pet Data Analysis/animalanalysis.html">A Practical Example</a>
     </div>
     <section class="chartContainer">
-        <h2>Treemap</h2>
-        <p>This is a treemap</p>
+        <h1>Treemaps</h1>
+        <h2>Description</h2>
+        <h3>Usage Case</h3>
+        <p>Treemaps visualize hierarchical data with a series of rectangles that are contained within each other. The root node has is the largest rectangle, and nodes with more children tend to be larger as well. Add labels and legend.</p>
+        <h3>Marks</h3>
+        <p>2 - Area to denote number of children, and containment to show the parent/child relationship between nodes. The area sizing within a treemap is often mapped from quantitative values and provides a part-to-whole relationship.</p>
+        <h3>Channels</h3>
+        <p>0 - No mandatory channels for this type of graph.</p>
+        <p>An optional channel would be color, if it is chosen to display a node's location in the hierarchy.</p>
         <svg id='treeMap'></svg>
-        <br><hr>
+        <br>
     </section>
     <script src='./main.js'></script>
   </body>

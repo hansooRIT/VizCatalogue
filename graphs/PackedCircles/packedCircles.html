@@ -1,10 +1,11 @@
 <!doctype html>
 <html lang='en'>
   <head>
-    <title>My Awesome Visualization</title>
+    <title>Packed Circle Graph</title>
     <meta charset="utf-8">
     <script src="https://d3js.org/d3.v5.min.js"></script>
     <link rel="stylesheet" href="../../vizcatalogue.css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat|Noto+Sans+TC" rel="stylesheet">
   </head>
 
   <body>
@@ -28,12 +29,20 @@
         <a href="../StackedBarChart/stackedBar.html">Stacked Bar</a>
         <a href="../Tree/tree.html">Tree</a>
         <a href="../Treemap/treemap.html">Treemap</a>
+        <a href="../../Pet Data Analysis/animalanalysis.html">A Practical Example</a>
     </div>
     <section class="chartContainer">
-        <h2>Packed Circles</h2>
-        <p>This is a packed circle</p>
+        <h1>Packed Circle Graph</h1>
+        <h2>Description</h2>
+        <h3>Usage Case</h3>
+        <p>Packed circle graphs display hierarchical data, and shows the hierarchy of each node through a series of circles within circles. The largest circle being the root node, and each smaller circle being children of that root. The larger the circle is, the more children they have. Add legend or labels.</p>
+        <h3>Marks</h3>
+        <p>2 - Point for each circle, and containment to denote parent/child relationship</p>
+        <h3>Channels</h3>
+        <p>1 - Color. to denote different nodes in the hierarchy.</p>
+        <p>Another potential channel could be color, but it is not in this case as the color is uniform.</p>
         <svg id='packedCircles'></svg>
-        <br><hr>
+        <br>
     </section>
     <script src='./main.js'></script>
   </body>

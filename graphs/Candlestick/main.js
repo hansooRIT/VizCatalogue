@@ -15,8 +15,8 @@ function rowConverter(d) {
 }
 
 function createCandlestickChart() {
-    let w = 900;
-    let h = 500;
+    let w = 615;
+    let h = 525;
     
     let svg = d3
         .select("#candlestick")
@@ -47,10 +47,11 @@ function createCandlestickChart() {
         .enter()
         .append("rect")
         .classed("bars", true)
-        .attr("x", d => xScale(d.date) + 8)
+        .attr("x", d => xScale(d.date) + 5)
         .attr("height", d => h - 20 - yScale(d.high - d.low))
         .attr("width", centerBarLen)
         .attr("y", d => yScale(d.high))
+        .attr("transform", `translate(10, -10)`)
         .style("fill", "#070707");
     
     svg
@@ -63,24 +64,38 @@ function createCandlestickChart() {
         .attr("height", d => h - 20 - yScale(d.close - d.open))
         .attr("width", mainBarLen)
         .attr("y", d => yScale(d.close))
+        .attr("transform", `translate(10, -10)`)
         .style("fill", "#474747");
     
     let xAxis = d3
         .axisBottom(xScale)
-        .tickFormat(d3.timeFormat("%x"));
+        .tickFormat(d3.timeFormat("%b %d"));
 
     let xAxisGroup = svg
         .append("g")
-        .attr("transform", `translate(0, ${h - 20})`)
+        .attr("transform", `translate(10, ${h - 30})`)
         .call(xAxis);
     
     let yAxis = d3.axisLeft(yScale);
 
     let yAxisGroup = svg
         .append("g")
-        .attr("transform", `translate(40, 0)`)
+        .attr("transform", `translate(50, -10)`)
         .call(yAxis);
-
+    
+    svg.append("text")             
+      .attr("transform",
+            "translate(330, 520)")
+      .style("text-anchor", "middle")
+      .text("Date");
+    
+    svg.append("text")
+      .attr("transform", "rotate(-90)")
+      .attr("y", -5)
+      .attr("x", -250)
+      .attr("dy", "1em")
+      .style("text-anchor", "middle")
+      .text("Value (Thousands of dollars)");  
 }
 
 window.onload = function() {

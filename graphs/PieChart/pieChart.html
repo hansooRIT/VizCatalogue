@@ -1,10 +1,11 @@
 <!doctype html>
 <html lang='en'>
   <head>
-    <title>My Awesome Visualization</title>
+    <title>Pie Chart</title>
     <meta charset="utf-8">
     <script src="https://d3js.org/d3.v5.min.js"></script>
     <link rel="stylesheet" href="../../vizcatalogue.css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat|Noto+Sans+TC" rel="stylesheet">
   </head>
 
   <body>
@@ -28,12 +29,19 @@
         <a href="../StackedBarChart/stackedBar.html">Stacked Bar</a>
         <a href="../Tree/tree.html">Tree</a>
         <a href="../Treemap/treemap.html">Treemap</a>
+        <a href="../../Pet Data Analysis/animalanalysis.html">A Practical Example</a>
     </div>
     <section class="chartContainer">
-        <h2>Pie Chart</h2>
-        <p>This is a pie chart</p>
+        <h1>Pie Chart</h1>
+        <h2>Description</h2>
+        <h3>Usage Case</h3>
+        <p>Pie charts visualize the proportions that different data points occupy in the whole dataset. It is essentially the same as a donut chart, except it has a center area for a different aesthetic. An issue with this type of chart is that it is easy to misinterpret the data that it displays. The amount of space that each chunk occupies often misrepresents how large the data chunk actually is, and it is difficult to see exact values in a pie chart. In general, charts like this should have a legend to specify what each color refers to.</p>
+        <h3>Marks</h3>
+        <p>1 - Area, to denote the propertion that this one data point occupies in the dataset.</p>
+        <h3>Channels</h3>
+        <p>1 - Color, to denote which data point each color is refering to.</p>
         <svg id='pieChart'></svg>
-        <br><hr>
+        <br>
     </section>
     <script src='./main.js'></script>
   </body>

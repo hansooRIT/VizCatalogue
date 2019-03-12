@@ -1,10 +1,11 @@
 <!doctype html>
 <html lang='en'>
   <head>
-    <title>My Awesome Visualization</title>
+    <title>Scatter Plot</title>
     <meta charset="utf-8">
     <script src="https://d3js.org/d3.v5.min.js"></script>
     <link rel="stylesheet" href="../../vizcatalogue.css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat|Noto+Sans+TC" rel="stylesheet">
   </head>
 
   <body>
@@ -28,12 +29,20 @@
         <a href="../StackedBarChart/stackedBar.html">Stacked Bar</a>
         <a href="../Tree/tree.html">Tree</a>
         <a href="../Treemap/treemap.html">Treemap</a>
+        <a href="../../Pet Data Analysis/animalanalysis.html">A Practical Example</a>
     </div>
     <section class="chartContainer">
-        <h2>Scatter Plot</h2>
-        <p>This is a scatter plot</p>
+        <h1>Scatterplot</h1>
+        <h2>Description</h2>
+        <h3>Usage Case</h3>
+        <p>Scatterplots use dots to represent data values derived from 2 different variables that are mapped to the x and y axes. They are usually used in order to see if there is a sort of correlation between the two data points, and are extremely useful in that regard. Clean up display a bit.</p>
+        <h3>Marks</h3>
+        <p>1 - Points</p>
+        <h3>Channels</h3>
+        <p>2 - Horizontal and vertical positions</p>
+        <p>Other potential channels could include color or area, as area could represent a third variable that is related to these, and color could differentiate between nodes if need be.</p>
         <svg id='scatterPlot'></svg>
-        <br><hr>
+        <br>
     </section>
     <script src='./main.js'></script>
   </body>

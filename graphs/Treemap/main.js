@@ -61,7 +61,7 @@ function createTreeMap() {
     let root = d3.hierarchy(dataset).count();
     console.log(root)
     
-    let w = 800, h = 500;
+    let w = 600, h = 500;
     
     let svg = d3.select("#treeMap")
         .attr('width', w)

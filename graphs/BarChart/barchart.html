@@ -1,10 +1,11 @@
 <!doctype html>
 <html lang='en'>
   <head>
-    <title>My Awesome Visualization</title>
+    <title>Bar Chart</title>
     <meta charset="utf-8">
     <script src="https://d3js.org/d3.v5.min.js"></script>
     <link rel="stylesheet" href="../../vizcatalogue.css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat|Noto+Sans+TC" rel="stylesheet">
   </head>
 
   <body>
@@ -28,12 +29,19 @@
         <a href="../StackedBarChart/stackedBar.html">Stacked Bar</a>
         <a href="../Tree/tree.html">Tree</a>
         <a href="../Treemap/treemap.html">Treemap</a>
+        <a href="../../Pet Data Analysis/animalanalysis.html">A Practical Example</a>
     </div>
     <section class="chartContainer">
-        <h2>Bar Chart</h2>
-        <p>This is a bar chart</p>
+        <h1>Bar Chart</h1>
+        <h2>Description</h2>
+        <h3>Usage Case</h3>
+        <p>Bar charts tend to show comparisons between different categories of data. It is relatively easy to compare the sizes of different bars and notice the differences between them, so this is a popular means of displaying a comparison. In this case, the bar chart is used to show a change in calorie intake per day of the week for a person.</p>
+        <h3>Marks</h3>
+        <p>1 - Line</p>
+        <h3>Channels</h3>
+        <p>3 - Horizontal position, vertical position, color to denote if a data point is below a certain threshold (Calories < 2000)</p>
         <svg id='barChart'></svg>
-        <br><hr>
+        <br>
     </section>
     <script src='./main.js'></script>
   </body>

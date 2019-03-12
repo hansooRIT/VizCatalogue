@@ -16,8 +16,8 @@ function rowConverter(d) {
 }
 
 function createStackedBarChart() {
-    let w = 600;
-    let h = 500;
+    let w = 615;
+    let h = 525;
     
     let svg = d3
         .select("#stackedBarChart")
@@ -27,12 +27,8 @@ function createStackedBarChart() {
     let stack = d3.stack()
         .keys(["fruit", "meat", "grain", "vegetables", "dairy", "sweets"]);
     
-    console.log(dataset);
-    
     let series = stack(dataset);
-    
-    console.log(series);
-    
+
     let yScale = d3
         .scaleLinear()
         .domain([0, d3.max(dataset, (d) => {
@@ -45,7 +41,7 @@ function createStackedBarChart() {
         .domain([0, 7])
         .range([40, w - 20]);
     
-    let colors = ["red", "blue", "white", "yellow", "green", "black"];
+    let colors = ["#477cf7", "#6387f8", "#8c9ff9", "#b6bdf9", "#d3d5fa", "#dfe1fa"];
     
     let groups = svg.selectAll("g")
         .data(series)
@@ -68,26 +64,44 @@ function createStackedBarChart() {
         .attr("height", (d) => {
             return yScale(d[0]) - yScale(d[1]);
         })
-        .attr("width", (w/7) - 20);
+        .attr("width", (w/7) - 20)
+        .attr("transform", `translate(10, -10)`);
         
     let xAxis = d3
         .axisBottom(xScale)
         .ticks(dataset.length)
         .tickFormat(function(d, i) {
-            return "Person " + (i + 1);
+            if (i > 0) {
+                return "Person " + i;
+            }
+            return "";
         });
 
     let xAxisGroup = svg
         .append("g")
-        .attr("transform", `translate(0, ${h - 20})`)
+        .attr("transform", `translate(10, ${h - 30})`)
         .call(xAxis);
     
     let yAxis = d3.axisLeft(yScale);
 
     let yAxisGroup = svg
         .append("g")
-        .attr("transform", `translate(40, 0)`)
+        .attr("transform", `translate(50, -10)`)
         .call(yAxis);
+    
+    svg.append("text")             
+      .attr("transform",
+            "translate(335, 520)")
+      .style("text-anchor", "middle")
+      .text("Person");
+    
+    svg.append("text")
+      .attr("transform", "rotate(-90)")
+      .attr("y", -5)
+      .attr("x", -250)
+      .attr("dy", "1em")
+      .style("text-anchor", "middle")
+      .text("Servings of Food");  
 }
 
 window.onload = function() {

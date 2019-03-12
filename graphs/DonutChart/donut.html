@@ -1,10 +1,11 @@
 <!doctype html>
 <html lang='en'>
   <head>
-    <title>My Awesome Visualization</title>
+    <title>Donut Chart</title>
     <meta charset="utf-8">
     <script src="https://d3js.org/d3.v5.min.js"></script>
     <link rel="stylesheet" href="../../vizcatalogue.css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat|Noto+Sans+TC" rel="stylesheet">
   </head>
 
   <body>
@@ -28,12 +29,19 @@
         <a href="../StackedBarChart/stackedBar.html">Stacked Bar</a>
         <a href="../Tree/tree.html">Tree</a>
         <a href="../Treemap/treemap.html">Treemap</a>
+        <a href="../../Pet Data Analysis/animalanalysis.html">A Practical Example</a>
     </div>
     <section class="chartContainer">
-        <h2>Donut Chart</h2>
-        <p>This is a donut chart</p>
+        <h1>Donut Chart</h1>
+        <h2>Description</h2>
+        <h3>Usage Case</h3>
+        <p>Donut charts visualize the proportions that different data points occupy in the whole dataset. It is essentially the same as a pie chart, except it has the center area removed for a different aesthetic. In general, charts like this should have a legend to specify what each color refers to.</p>
+        <h3>Marks</h3>
+        <p>1 - Line, to denote the separation of each segment.</p>
+        <h3>Channels</h3>
+        <p>2 - Angle, to show the proportional value of each section, and color, to denote which data point each color is refering to.</p>
         <svg id='donutChart'></svg>
-        <br><hr>
+        <br>
     </section>
     <script src='./main.js'></script>
   </body>

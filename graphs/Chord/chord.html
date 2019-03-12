@@ -1,10 +1,11 @@
 <!doctype html>
 <html lang='en'>
   <head>
-    <title>My Awesome Visualization</title>
+    <title>Chord</title>
     <meta charset="utf-8">
     <script src="https://d3js.org/d3.v5.min.js"></script>
     <link rel="stylesheet" href="../../vizcatalogue.css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat|Noto+Sans+TC" rel="stylesheet">
   </head>
 
   <body>
@@ -28,12 +29,19 @@
         <a href="../StackedBarChart/stackedBar.html">Stacked Bar</a>
         <a href="../Tree/tree.html">Tree</a>
         <a href="../Treemap/treemap.html">Treemap</a>
+        <a href="../../Pet Data Analysis/animalanalysis.html">A Practical Example</a>
     </div>
     <section class="chartContainer">
-        <h2>Chord</h2>
-        <p>This is a chord!</p>
+        <h1>Chord</h1>
+        <h2>Description</h2>
+        <h3>Usage Case</h3>
+        <p>Chord graphs describe the inter-relationship between different data points in a matrix. They link data of different categories and see how they effect each other, with each different category having its own section of the circle, and having arcs link to other categories. Need to add labeling.</p>
+        <h3>Marks</h3>
+        <p>2 - Lines to link other categories, and area to denote how large the relationship is.</p>
+        <h3>Channels</h3>
+        <p>2 - Angle for the length of the outer arcs and color to denote which part of the relationship has more of an effect on the other.</p>
         <svg id='chord'></svg>
-        <br><hr>
+        <br>
     </section>
     <script src='./main.js'></script>
   </body>

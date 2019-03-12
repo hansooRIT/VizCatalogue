@@ -8,8 +8,8 @@ function rowConverter(d) {
 }
 
 function createScatterplot() {
-    let w = 600;
-    let h = 500;
+    let w = 615;
+    let h = 525;
     
     let gpaMin = d3.min(dataset, (d) => d.gpa);
     let gpaMax = d3.max(dataset, (d) => d.gpa);
@@ -39,23 +39,37 @@ function createScatterplot() {
         .attr('cx', (d) => xScale(d.gpa))
         .attr('cy', (d) => yScale(d.startingSalary))
         .attr('fill', 'blue')
-        .attr('r', 5);
+        .attr('r', 5)
+        .attr("transform", `translate(10, -10)`);
     
     let xAxis = d3
         .axisBottom(xScale);
 
     let xAxisGroup = svg
         .append("g")
-        .attr("transform", `translate(0, ${h - 20})`)
+        .attr("transform", `translate(10, ${h - 30})`)
         .call(xAxis);
     
     let yAxis = d3.axisLeft(yScale);
 
     let yAxisGroup = svg
         .append("g")
-        .attr("transform", `translate(50, 0)`)
+        .attr("transform", `translate(50, -10)`)
         .call(yAxis);
 
+    svg.append("text")             
+      .attr("transform",
+            "translate(330, 520)")
+      .style("text-anchor", "middle")
+      .text("GPA");
+    
+    svg.append("text")
+      .attr("transform", "rotate(-90)")
+      .attr("y", -5)
+      .attr("x", -250)
+      .attr("dy", "1em")
+      .style("text-anchor", "middle")
+      .text("Starting Salary");  
 }
 
 window.onload = function() {

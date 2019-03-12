@@ -1,10 +1,11 @@
 <!doctype html>
 <html lang='en'>
   <head>
-    <title>My Awesome Visualization</title>
+    <title>Choropleth</title>
     <meta charset="utf-8">
     <script src="https://d3js.org/d3.v5.min.js"></script>
     <link rel="stylesheet" href="../../vizcatalogue.css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat|Noto+Sans+TC" rel="stylesheet">
   </head>
 
   <body>
@@ -28,12 +29,21 @@
         <a href="../StackedBarChart/stackedBar.html">Stacked Bar</a>
         <a href="../Tree/tree.html">Tree</a>
         <a href="../Treemap/treemap.html">Treemap</a>
+        <a href="../../Pet Data Analysis/animalanalysis.html">A Practical Example</a>
     </div>
+    <section class="mapTextContainer">
+        <h1>Choropleth</h1>
+        <h2>Description</h2>
+        <h3 id="desc">Usage Case</h3>
+        <p>Choropleths are a type of map visualization where each different node has a different color to denote a different value. In this case, it is a scale to see what percentage of the U.S. population lives in the U.S., with darker states having higher populations. Need to add labeling.</p>
+        <h3 id="desc2">Marks</h3>
+        <p>1 - Area to denote the state/location in question</p>
+        <h3 id="desc3">Channels</h3>
+        <p>1 - Color, to display how much of the population is within each state. (Darker = larger proportion)</p>
+    </section>
     <section class="chartContainer">
-        <h2>Choropleth</h2>
-        <p>This is a choropleth</p>
         <svg id='choropleth'></svg>
-        <br><hr>
+        <br>
     </section>
     <script src='./main.js'></script>
   </body>

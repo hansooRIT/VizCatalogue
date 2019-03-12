@@ -1,10 +1,11 @@
 <!doctype html>
 <html lang='en'>
   <head>
-    <title>My Awesome Visualization</title>
+    <title>Line Chart</title>
     <meta charset="utf-8">
     <script src="https://d3js.org/d3.v5.min.js"></script>
     <link rel="stylesheet" href="../../vizcatalogue.css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat|Noto+Sans+TC" rel="stylesheet">
   </head>
 
   <body>
@@ -28,12 +29,19 @@
         <a href="../StackedBarChart/stackedBar.html">Stacked Bar</a>
         <a href="../Tree/tree.html">Tree</a>
         <a href="../Treemap/treemap.html">Treemap</a>
+        <a href="../../Pet Data Analysis/animalanalysis.html">A Practical Example</a>
     </div>
     <section class="chartContainer">
-        <h2>Line Chart</h2>
-        <p>This is a line chart.</p>
+        <h1>Line Chart</h1>
+        <h2>Description</h2>
+        <h3>Usage Case</h3>
+        <p>Line charts are similar to area charts in that they tend to show time-series relationships. For this, only the circles that refer to each data point really matter, with the line connecting them showing the direction that the data is changing in.</p>
+        <h3>Marks</h3>
+        <p>2 - Point and connections</p>
+        <h3>Channels</h3>
+        <p>2 - Horizontal and vertical positions</p>
         <svg id='lineChart'></svg>
-        <br><hr>
+        <br>
     </section>
     <script src='./main.js'></script>
   </body>

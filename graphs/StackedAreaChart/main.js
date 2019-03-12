@@ -17,8 +17,8 @@ function rowConverter(d) {
 }
 
 function createStackedAreaChart() {
-    let w = 800;
-    let h = 500;
+    let w = 615;
+    let h = 525;
     
     let svg = d3
         .select("#stackedAreaChart")
@@ -53,7 +53,7 @@ function createStackedAreaChart() {
         })])
         .range([40, w - 20]);
     
-    let colors = ["red", "blue", "black", "yellow", "green"];
+    let colors = ["#477cf7", "#6387f8", "#8c9ff9", "#b6bdf9", "#d3d5fa"];
     
     let area = d3.area()
         .x(function(d) {
@@ -71,11 +71,12 @@ function createStackedAreaChart() {
         .data(series)
         .enter()
         .append("path")
-        .attr("class", "area")
+        .attr("class", "stackedArea")
         .attr("d", area)
         .attr("fill", (d, i) => {
             return colors[i];
-        });
+        })
+        .attr("transform", `translate(10, -10)`);
 
     let xAxis = d3
         .axisBottom(xScale)
@@ -84,15 +85,29 @@ function createStackedAreaChart() {
 
     let xAxisGroup = svg
         .append("g")
-        .attr("transform", `translate(0, ${h - 20})`)
+        .attr("transform", `translate(10, ${h - 30})`)
         .call(xAxis);
     
     let yAxis = d3.axisLeft(yScale);
 
     let yAxisGroup = svg
         .append("g")
-        .attr("transform", `translate(40, 0)`)
+        .attr("transform", `translate(50, -10)`)
         .call(yAxis);
+    
+    svg.append("text")             
+      .attr("transform",
+            "translate(330, 520)")
+      .style("text-anchor", "middle")
+      .text("Date");
+    
+    svg.append("text")
+      .attr("transform", "rotate(-90)")
+      .attr("y", -5)
+      .attr("x", -250)
+      .attr("dy", "1em")
+      .style("text-anchor", "middle")
+      .text("Ice Cream Sales");  
 }
 
 window.onload = function() {

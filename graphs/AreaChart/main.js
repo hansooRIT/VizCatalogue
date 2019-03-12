@@ -12,8 +12,8 @@ function rowConverter(d) {
 }
 
 function createAreaChart() {
-    let w = 600;
-    let h = 500;
+    let w = 615;
+    let h = 525;
     
     let svg = d3
         .select("#areaChart")
@@ -42,14 +42,14 @@ function createAreaChart() {
 
     let xAxisGroup = svg
         .append("g")
-        .attr("transform", `translate(0, ${h - 20})`)
+        .attr("transform", `translate(10, ${h - 30})`)
         .call(xAxis);
     
     let yAxis = d3.axisLeft(yScale);
 
     let yAxisGroup = svg
         .append("g")
-        .attr("transform", `translate(40, 0)`)
+        .attr("transform", `translate(50, 0)`)
         .call(yAxis);
 
     let area = d3
@@ -61,7 +61,22 @@ function createAreaChart() {
     svg.append('path')
         .datum(dataset)
         .attr('class', 'area')
+        .attr("transform", `translate(10, -10)`)
         .attr('d', area);
+    
+    svg.append("text")             
+      .attr("transform",
+            "translate(310, 520)")
+      .style("text-anchor", "middle")
+      .text("Day");
+    
+    svg.append("text")
+      .attr("transform", "rotate(-90)")
+      .attr("y", -5)
+      .attr("x", -250)
+      .attr("dy", "1em")
+      .style("text-anchor", "middle")
+      .text("Calories");      
 }
 
 window.onload = function() {

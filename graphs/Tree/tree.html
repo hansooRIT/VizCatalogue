@@ -1,10 +1,11 @@
 <!doctype html>
 <html lang='en'>
   <head>
-    <title>My Awesome Visualization</title>
+    <title>Tree</title>
     <meta charset="utf-8">
     <script src="https://d3js.org/d3.v5.min.js"></script>
     <link rel="stylesheet" href="../../vizcatalogue.css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat|Noto+Sans+TC" rel="stylesheet">
   </head>
 
   <body>
@@ -28,12 +29,20 @@
         <a href="../StackedBarChart/stackedBar.html">Stacked Bar</a>
         <a href="../Tree/tree.html">Tree</a>
         <a href="../Treemap/treemap.html">Treemap</a>
+        <a href="../../Pet Data Analysis/animalanalysis.html">A Practical Example</a>
     </div>
     <section class="chartContainer">
-        <h2>Tree</h2>
-        <p>This is a tree</p>
+        <h1>Tree</h1>
+        <h2>Description</h2>
+        <h3>Usage Case</h3>
+        <p>Trees are a chart type that displays hierarchical data, and orders them based on whether they are a root, parent, child, or leaf node. Root meaning that they have no parent nodes, and leaf meaning that they have no children nodes. These are ordered simply by their distance from the root node. Add labeling through interactivity.</p>
+        <h3>Marks</h3>
+        <p>2 - Points for each node, and connections for their children</p>
+        <h3>Channels</h3>
+        <p>0 - No real channels differentiating them at all for this chart.</p>
+        <p>Some potential channels could include color for differentiating the each node location in the cluster, or the area of the node to denote how important it is.</p>
         <svg id='tree'></svg>
-        <br><hr>
+        <br>
     </section>
     <script src='./main.js'></script>
   </body>

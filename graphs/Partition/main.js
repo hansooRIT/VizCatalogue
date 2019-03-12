@@ -60,7 +60,7 @@ let dataset = {
 function createPartition() {
     let root = d3.hierarchy(dataset).count();
     
-    let w = 650, h = 650;
+    let w = 625, h = 625;
     
     let svg = d3.select("#partition")
         .attr('width', w)

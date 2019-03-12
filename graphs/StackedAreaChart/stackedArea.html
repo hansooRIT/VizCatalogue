@@ -1,10 +1,11 @@
 <!doctype html>
 <html lang='en'>
   <head>
-    <title>My Awesome Visualization</title>
+    <title>Stacked Area Chart</title>
     <meta charset="utf-8">
     <script src="https://d3js.org/d3.v5.min.js"></script>
     <link rel="stylesheet" href="../../vizcatalogue.css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat|Noto+Sans+TC" rel="stylesheet">
   </head>
 
   <body>
@@ -28,12 +29,19 @@
         <a href="../StackedBarChart/stackedBar.html">Stacked Bar</a>
         <a href="../Tree/tree.html">Tree</a>
         <a href="../Treemap/treemap.html">Treemap</a>
+        <a href="../../Pet Data Analysis/animalanalysis.html">A Practical Example</a>
     </div>
     <section class="chartContainer">
-        <h2>Stacked Area Chart</h2>
-        <p>This is a stacked area chart</p>
+        <h1>Stacked Area Chart</h1>
+        <h2>Description</h2>
+        <h3>Usage Case</h3>
+        <p>Stacked area charts tend to describe a time-series relationship, but showing the proportion of different data values adding to a whole. In this example, each different color represents a different ice cream flavor sold, and the height of the top most portion of each line represents the total sales. There should be a legend denoting what each color represents as well. Add legend for color and interactivity.</p>
+        <h3>Marks</h3>
+        <p>1 - Area, to show how large the proportion of each data point is for that given time slot.</p>
+        <h3>Channels</h3>
+        <p>3 - Horizontal and vertical positions, and color to differentiate each flavor.</p>
         <svg id='stackedAreaChart'></svg>
-        <br><hr>
+        <br>
     </section>
     <script src='./main.js'></script>
   </body>

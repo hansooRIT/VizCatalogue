@@ -16,7 +16,7 @@ function groupTicks(d, step) {
 }
 
 function createChord() {
-    let w = 700, h = 700;
+    let w = 600, h = 600;
     let outerRadius = Math.min(w, h) * 0.5 - 30;
     let innerRadius = outerRadius - 20;
     let formatValue = d3.formatPrefix(",.0", 1e3);

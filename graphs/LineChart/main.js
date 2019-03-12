@@ -12,8 +12,8 @@ function rowConverter(d) {
 }
 
 function createLineChart() {
-    let w = 600;
-    let h = 500;
+    let w = 615;
+    let h = 525;
     
     let svg = d3
         .select("#lineChart")
@@ -42,14 +42,14 @@ function createLineChart() {
 
     let xAxisGroup = svg
         .append("g")
-        .attr("transform", `translate(0, ${h - 20})`)
+        .attr("transform", `translate(10, ${h - 30})`)
         .call(xAxis);
     
     let yAxis = d3.axisLeft(yScale);
 
     let yAxisGroup = svg
         .append("g")
-        .attr("transform", `translate(40, 0)`)
+        .attr("transform", `translate(50, -10)`)
         .call(yAxis);
 
     let line = d3
@@ -60,7 +60,8 @@ function createLineChart() {
     svg.append('path')
         .datum(dataset)
         .attr('class', 'line')
-        .attr('d', line);
+        .attr('d', line)
+        .attr("transform", `translate(10, -10)`);
     
     svg.selectAll('.dot')
         .data(dataset, key)
@@ -69,7 +70,22 @@ function createLineChart() {
         .attr("cx", d => xScale(d.date))
         .attr("cy", d => yScale(d.calories))
         .attr('r', 5)
+        .attr("transform", `translate(10, -10)`)
         .style("fill", "red");
+    
+    svg.append("text")             
+      .attr("transform",
+            "translate(330, 520)")
+      .style("text-anchor", "middle")
+      .text("Day");
+    
+    svg.append("text")
+      .attr("transform", "rotate(-90)")
+      .attr("y", -5)
+      .attr("x", -250)
+      .attr("dy", "1em")
+      .style("text-anchor", "middle")
+      .text("Calories");  
 }
 
 window.onload = function() {
