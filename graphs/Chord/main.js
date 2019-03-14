@@ -16,14 +16,14 @@ function groupTicks(d, step) {
 }
 
 function createChord() {
-    let w = 600, h = 600;
+    let w = 900, h = 600;
     let outerRadius = Math.min(w, h) * 0.5 - 30;
     let innerRadius = outerRadius - 20;
     let formatValue = d3.formatPrefix(",.0", 1e3);
     
     let svg = d3.select("#chord")
-        .attr("viewBox", [-w / 2, -h / 2, w, h])
-        .attr('width', w)
+        .attr("viewBox", [0, -h / 2, 300, h])
+        .attr('width', 900)
         .attr('height', h);
     
     let chord = d3.chord()
@@ -80,6 +80,23 @@ function createChord() {
       .attr("d", ribbon)
       .attr("fill", d => color(d.target.index))
       .attr("stroke", d => d3.rgb(color(d.target.index)).darker());
+    
+    let legendScale = d3.scaleOrdinal()
+          .domain(["Category 1", "Category 2", "Category 3", "Category 4", "Category 5"])
+          .range(color.range());
+
+    svg.append("g")
+        .attr("class", "legendOrdinal")
+        .attr("transform", "translate(300,-240)");
+
+    // see https://github.com/d3/d3-shape#symbols for information about d3 symbol shapes
+    var legendOrdinal = d3.legendColor()
+        .shape("path", d3.symbol().type(d3.symbolSquare).size(60)())
+        .shapePadding(10)
+        .scale(legendScale);
+
+    svg.select(".legendOrdinal")
+        .call(legendOrdinal);
     
 }
 

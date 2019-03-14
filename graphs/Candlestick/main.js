@@ -15,7 +15,7 @@ function rowConverter(d) {
 }
 
 function createCandlestickChart() {
-    let w = 615;
+    let w = 645;
     let h = 525;
     
     let svg = d3
@@ -31,7 +31,7 @@ function createCandlestickChart() {
     let xScale = d3
         .scaleTime()
         .domain([d3.min(dataset, d => d.date), d3.max(dataset, d => d.date)])
-        .range([40, w - 20]);
+        .range([40, w - 40]);
     
     let cScale = d3
         .scaleLinear()

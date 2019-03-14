@@ -35,7 +35,7 @@ function createBarChart() {
         .domain([1500, 2600])
         .range(["red", "orange"]);
     
-    let barlen = (w - 40) / dataset.length - 4;
+    let barlen = (w - 50) / dataset.length - 4;
     
     svg
         .selectAll(".bars")
@@ -69,7 +69,7 @@ function createBarChart() {
     
     svg.append("text")             
       .attr("transform",
-            "translate(310, 520)")
+            "translate(320, 520)")
       .style("text-anchor", "middle")
       .text("Day");
     

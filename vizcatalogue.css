@@ -63,24 +63,16 @@
 
 .mapTextContainer h2, h3 {
     font-family: 'Montserrat', sans-serif;
-    margin-left: 850px;
+    margin-left: 925px;
 }
 
 #desc {
-    margin-left: 850px;
-}
-
-#desc2 {
-    margin-left: 850px;
-}
-
-#desc3 {
-    margin-left: 850px;
+    margin-left: 925px;
 }
 
 .mapTextContainer p {
     font-family: 'Noto Sans TC', sans-serif;
-    margin-left: 850px;
+    margin-left: 950px;
     position: static;
     width: 350px;
 }
@@ -96,12 +88,12 @@
 
 .chartContainer h2, h3 {
     font-family: 'Montserrat', sans-serif;
-    margin-left: 625px;
+    margin-left: 700px;
 }
 
 .chartContainer p {
     font-family: 'Noto Sans TC', sans-serif;
-    margin-left: 625px;
+    margin-left: 725px;
     position: static;
     width: 350px;
 }

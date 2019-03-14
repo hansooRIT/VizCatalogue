@@ -49,7 +49,7 @@ function createAreaChart() {
 
     let yAxisGroup = svg
         .append("g")
-        .attr("transform", `translate(50, 0)`)
+        .attr("transform", `translate(50, -10)`)
         .call(yAxis);
 
     let area = d3
@@ -66,7 +66,7 @@ function createAreaChart() {
     
     svg.append("text")             
       .attr("transform",
-            "translate(310, 520)")
+            "translate(320, 520)")
       .style("text-anchor", "middle")
       .text("Day");
     
