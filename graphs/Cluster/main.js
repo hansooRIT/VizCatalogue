@@ -59,7 +59,6 @@ let dataset = {
 
 function createCluster() {
     let root = d3.hierarchy(dataset);
-    console.log(root)
     
     let w = 500, h = 500;
     
@@ -70,7 +69,6 @@ function createCluster() {
     let treelayout = d3.cluster().size([w - 40, h - 40]);
     
     treelayout(root);
-    console.log(root);
     
     svg.selectAll('lines')
         .data(root.links())
@@ -89,7 +87,23 @@ function createCluster() {
         .classed('node', true)
         .attr('cx', d => d.y + 20)
         .attr('cy', d => d.x + 20)
-        .attr('r', 10);
+        .attr('r', 10)
+        .on("mouseover", function(d) {
+            d3.select("#name")
+                .text("Graph type: " + d.data.name);
+            d3.select("#depth")
+                .text("Depth: " + d.depth);
+            d3.select("#height")
+                .text("Height: " + d.height);
+            d3.select("#tooltip")
+                .style("left", d.y + 200 + "px")
+                .style("top", d.x + 30 + "px")
+                .classed("hidden", false);
+        })
+        .on("mouseout", function(d) {
+            d3.select("#tooltip")
+                .classed("hidden", true);
+        });
 }
 
 window.onload = function() {

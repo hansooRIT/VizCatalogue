@@ -123,3 +123,21 @@
   stroke: red;
   stroke-width: 2px;
 } 
+
+
+#tooltip {
+    font-size: 14px;
+    position: absolute;
+    background-color: white;
+    width: 150px;
+    height; auto;
+    padding: 10px;
+    border-style: solid;
+    border-color: black;
+    border-width: 2px;
+    border-radius: 5px;
+}
+
+#tooltip.hidden {
+    display: none;
+}
