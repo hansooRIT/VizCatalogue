@@ -43,8 +43,6 @@ function createDonutChart() {
   // usually used by giving input indices into array 
   let cScale = d3.scaleOrdinal(d3.schemeCategory10);
 
-  console.table(pie(dataset));
-
   let arcs = 
     svg.selectAll('g.arc')
         .data(pie(dataset))
@@ -66,6 +64,23 @@ function createDonutChart() {
     .attr('transform', d => `translate(${arc.centroid(d)})`)
     .attr('text-anchor', 'middle')
     .text(d => d.value);
+    
+  let legendScale = d3.scaleOrdinal()
+          .domain(["Steak", "Chicken", "Tofu", "Veggies", "Ground beef", "Pork", "Shrimp"])
+          .range(cScale.range());
+
+    svg.append("g")
+        .attr("class", "legendOrdinal")
+        .attr("transform", "translate(220, 160)");
+
+    // see https://github.com/d3/d3-shape#symbols for information about d3 symbol shapes
+    var legendOrdinal = d3.legendColor()
+        .shape("path", d3.symbol().type(d3.symbolSquare).size(60)())
+        .shapePadding(10)
+        .scale(legendScale);
+
+    svg.select(".legendOrdinal")
+        .call(legendOrdinal);
 }
 
 window.onload = function() {

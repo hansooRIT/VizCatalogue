@@ -28,7 +28,23 @@ function createMap(dataset, cityValues) {
         .style('stroke', 'black')
         .attr('cx', d => projection([d.lon, d.lat])[0])
         .attr('cy', d => projection([d.lon, d.lat])[1])
-        .attr('r', 3);
+        .attr('r', 3)
+        .on("mouseover", function(d) {
+            d3.select("#name")
+                .text("City: " + d.name);
+            d3.select("#lat")
+                .text("Latitude: " + d.lat);
+            d3.select("#long")
+                .text("Longitude: " + d.lon);
+            d3.select("#tooltip")
+                .style("left", 800 + "px")
+                .style("top", 0 + "px")
+                .classed("hidden", false);
+        })
+        .on("mouseout", function(d) {
+            d3.select("#tooltip")
+                .classed("hidden", true);
+        });
 }
 
 Promise.all([
